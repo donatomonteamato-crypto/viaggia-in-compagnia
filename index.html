@@ -6,49 +6,70 @@
 
   <style>
     body {
-      font-family: sans-serif;
-      text-align: center;
-      padding-top: 40px;
-      background-color: #f7f7f7;
+      font-family: 'Segoe UI', Roboto, sans-serif;
+      background-color: #f4f6f9;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
     }
 
-    /* Logo ritagliato */
+    .container {
+      background: white;
+      padding: 40px 50px;
+      border-radius: 14px;
+      box-shadow: 0px 8px 25px rgba(0,0,0,0.08);
+      text-align: center;
+      width: 380px;
+    }
+
     .logo {
-      width: 260px;
+      width: 240px;
+      margin-bottom: 25px;
+    }
+
+    .title {
+      font-size: 20px;
+      font-weight: 600;
+      color: #1a1a1a;
       margin-bottom: 30px;
     }
 
-    /* Pulsante */
     .btn {
       display: inline-block;
-      padding: 15px 30px;
-      font-size: 20px;
+      padding: 14px 26px;
+      font-size: 18px;
       background-color: #0078ff;
       color: white;
       text-decoration: none;
       border-radius: 8px;
       transition: 0.25s ease;
-      box-shadow: 0px 4px 10px rgba(0,0,0,0.15);
+      box-shadow: 0px 4px 12px rgba(0,0,0,0.15);
     }
 
-    /* Effetto hover */
     .btn:hover {
       background-color: #005fcc;
-      transform: scale(1.05);
-      box-shadow: 0px 6px 14px rgba(0,0,0,0.25);
+      transform: translateY(-2px);
+      box-shadow: 0px 6px 18px rgba(0,0,0,0.25);
     }
   </style>
 </head>
 
 <body>
 
-  <!-- Logo ritagliato -->
-  <img src="logo.jpg" alt="Logo" class="logo">
+  <div class="container">
+    <img src="logo.jpg" alt="Logo" class="logo">
 
-  <!-- Pulsante -->
-  <a href="offerta.jpeg" target="_blank" class="btn">
-    Clicca qui per accettare il servizio selezionato
-  </a>
+    <div class="title">
+      Iniziativa speciale per clienti
+    </div>
+
+    <a href="offerta.jpeg" target="_blank" class="btn">
+      Clicca qui per accettare il servizio selezionato
+    </a>
+  </div>
 
 </body>
 </html>
