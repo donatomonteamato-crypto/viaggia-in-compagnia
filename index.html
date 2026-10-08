@@ -23,6 +23,8 @@
       box-shadow: 0px 8px 25px rgba(0,0,0,0.08);
       text-align: center;
       width: 380px;
+      border: 2px solid #0078ff; /* bordo blu elegante */
+      animation: fadeIn 0.8s ease-out;
     }
 
     .logo {
@@ -47,12 +49,26 @@
       border-radius: 8px;
       transition: 0.25s ease;
       box-shadow: 0px 4px 12px rgba(0,0,0,0.15);
+      animation: pulse 2s infinite;
     }
 
     .btn:hover {
       background-color: #005fcc;
-      transform: translateY(-2px);
+      transform: translateY(-3px) scale(1.03);
       box-shadow: 0px 6px 18px rgba(0,0,0,0.25);
+    }
+
+    /* Animazione fade-in del box */
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    /* Animazione pulsante premium */
+    @keyframes pulse {
+      0% { transform: scale(1); }
+      50% { transform: scale(1.03); }
+      100% { transform: scale(1); }
     }
   </style>
 </head>
