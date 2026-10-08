@@ -16,6 +16,22 @@
       height: 100vh;
     }
 
+    /* Header minimal */
+    .header {
+      position: absolute;
+      top: 0;
+      width: 100%;
+      height: 60px;
+      background: white;
+      border-bottom: 3px solid #0078ff;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 18px;
+      font-weight: 600;
+      color: #0078ff;
+    }
+
     .container {
       background: white;
       padding: 40px 50px;
@@ -25,6 +41,13 @@
       width: 380px;
       border: 2px solid #0078ff; /* bordo blu elegante */
       animation: fadeIn 0.8s ease-out;
+      position: relative;
+    }
+
+    /* Glow leggero attorno al box */
+    .container:hover {
+      box-shadow: 0px 0px 20px rgba(0,120,255,0.25);
+      transition: 0.3s ease;
     }
 
     .logo {
@@ -58,6 +81,34 @@
       box-shadow: 0px 6px 18px rgba(0,0,0,0.25);
     }
 
+    /* Equalizzatore grafico */
+    .equalizer {
+      margin-top: 25px;
+      display: flex;
+      justify-content: center;
+      gap: 6px;
+      opacity: 0;
+      transition: opacity 0.5s ease;
+    }
+
+    .bar {
+      width: 6px;
+      height: 20px;
+      background: #0078ff;
+      animation: bounce 1s infinite ease-in-out;
+    }
+
+    .bar:nth-child(2) { animation-delay: 0.2s; }
+    .bar:nth-child(3) { animation-delay: 0.4s; }
+    .bar:nth-child(4) { animation-delay: 0.6s; }
+    .bar:nth-child(5) { animation-delay: 0.8s; }
+
+    @keyframes bounce {
+      0% { height: 20px; }
+      50% { height: 40px; }
+      100% { height: 20px; }
+    }
+
     /* Animazione fade-in del box */
     @keyframes fadeIn {
       from { opacity: 0; transform: translateY(20px); }
@@ -70,10 +121,24 @@
       50% { transform: scale(1.03); }
       100% { transform: scale(1); }
     }
+
+    /* Footer minimal */
+    .footer {
+      position: absolute;
+      bottom: 10px;
+      width: 100%;
+      text-align: center;
+      font-size: 12px;
+      color: #777;
+    }
   </style>
 </head>
 
 <body>
+
+  <div class="header">
+    Servizio dedicato ai clienti NexiPOS
+  </div>
 
   <div class="container">
     <img src="logo.jpg" alt="Logo" class="logo">
@@ -85,6 +150,19 @@
     <a href="offerta.jpeg" target="_blank" class="btn" onclick="playMusic()">
       Clicca qui per accettare il servizio selezionato
     </a>
+
+    <!-- Equalizzatore grafico -->
+    <div class="equalizer" id="eq">
+      <div class="bar"></div>
+      <div class="bar"></div>
+      <div class="bar"></div>
+      <div class="bar"></div>
+      <div class="bar"></div>
+    </div>
+
+    <div class="footer">
+      © 2026 – Servizio riservato ai clienti NexiPOS
+    </div>
   </div>
 
   <!-- Lettore audio invisibile -->
@@ -93,8 +171,12 @@
   <script>
     function playMusic() {
       const audio = document.getElementById("music");
-      audio.volume = 0.5; // volume 50%
+      const eq = document.getElementById("eq");
+
+      audio.volume = 0.5;
       audio.play();
+
+      eq.style.opacity = 1;
     }
   </script>
 
